@@ -17,65 +17,57 @@ const latestPosts = allPosts
 	ogUrl="https://method-works.jp"
 	ogImage="/images/ogp-method-works.jpg"
 >
-	<main class="container">
-		<section class="hero">
-			<p class="label">Research Notes for Education Design</p>
-			<h1>Method Works</h1>
-			<p class="copy">教育をより良くしていくための設計と思考を探求する場所。</p>
-			<p class="description">
-				元教員として現場で感じた違和感と、DX実務で得た構造的な視点を接続しながら、
-				教育をアップデートするための問い・設計・実践のプロセスを記録していきます。
-			</p>
-			<a class="button" href="/blog">記事を読む</a>
-		</section>
+	<section class="hero">
+		<p class="label">Research Notes for Education Design</p>
+		<h1>Method Works</h1>
+		<p class="copy">教育をより良くしていくための設計と思考を探求する場所。</p>
+		<p class="description">
+			元教員として現場で感じた違和感と、DX実務で得た構造的な視点を接続しながら、
+			教育をアップデートするための問い・設計・実践のプロセスを記録していきます。
+		</p>
+		<a class="button" href="/blog">記事を読む</a>
+	</section>
 
-		<section class="section">
-			<h2>About Method Works</h2>
-			<p>
-				Method Worksは、教育を「思い」だけでなく「設計」から見つめ直すための研究ノートです。
-				学び手・教え手・運営者の体験をつなぎ、再現可能な改善へと落とし込む知見を蓄積します。
-			</p>
-		</section>
+	<section class="section">
+		<h2>About Method Works</h2>
+		<p>
+			Method Worksは、教育を「思い」だけでなく「設計」から見つめ直すための研究ノートです。
+			学び手・教え手・運営者の体験をつなぎ、再現可能な改善へと落とし込む知見を蓄積します。
+		</p>
+	</section>
 
-		<section class="section">
-			<h2>最新記事</h2>
-			{
-				latestPosts.length > 0 ? (
-					<ul class="posts">
-						{latestPosts.map((post) => (
-							<li>
-								<a href={`/blog/${post.slug}/`}>
-									<span>{post.data.title}</span>
-									<time datetime={post.data.pubDate.toISOString()}>
-										{post.data.pubDate.toLocaleDateString('ja-JP')}
-									</time>
-								</a>
-							</li>
-						))}
-					</ul>
-				) : (
-					<p class="empty">準備中の記事があります。公開までしばらくお待ちください。</p>
-				)
-			}
-		</section>
+	<section class="section">
+		<h2>最新記事</h2>
+		{
+			latestPosts.length > 0 ? (
+				<ul class="posts">
+					{latestPosts.map((post) => (
+						<li>
+							<a href={`/blog/${post.slug}/`}>
+								<span>{post.data.title}</span>
+								<time datetime={post.data.pubDate.toISOString()}>
+									{post.data.pubDate.toLocaleDateString('ja-JP')}
+								</time>
+							</a>
+						</li>
+					))}
+				</ul>
+			) : (
+				<p class="empty">準備中の記事があります。公開までしばらくお待ちください。</p>
+			)
+		}
+	</section>
 
-		<section class="section journey">
-			<h2>Design the Next Learning</h2>
-			<p>
-				教育を変える旅は、問いを立て、試し、振り返る営みの連続です。
-				ここでの記録が、次の実践へ向かう小さな地図になりますように。
-			</p>
-		</section>
-	</main>
+	<section class="section journey">
+		<h2>Design the Next Learning</h2>
+		<p>
+			教育を変える旅は、問いを立て、試し、振り返る営みの連続です。
+			ここでの記録が、次の実践へ向かう小さな地図になりますように。
+		</p>
+	</section>
 </Layout>
 
 <style>
-	.container {
-		max-width: 920px;
-		margin: 0 auto;
-		padding: 4rem 1.25rem 5rem;
-	}
-
 	.hero {
 		padding: 3rem 0;
 		border-bottom: 1px solid #d8ddd5;

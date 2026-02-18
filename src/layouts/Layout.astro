@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header.astro';
+
 interface Props {
 	title?: string;
 	description?: string;
@@ -39,11 +41,14 @@ const {
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<Header />
+		<main class="container">
+			<slot />
+		</main>
 	</body>
 </html>
 
-<style>
+<style is:global>
 	html,
 	body {
 		margin: 0;
@@ -57,5 +62,17 @@ const {
 
 	* {
 		box-sizing: border-box;
+	}
+
+	.container {
+		max-width: 920px;
+		margin: 0 auto;
+		padding: 4rem 1.25rem 5rem;
+	}
+
+	@media (max-width: 640px) {
+		.container {
+			padding: 2.5rem 1.25rem;
+		}
 	}
 </style>
